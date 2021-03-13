@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="bg-layout">
+        <div class="bg-img opacity" style="background-color: aqua;"></div>
+        <div class="bg-img" style="background-color: red;"></div>
+        <div class="bg-img" style="background-color: yellow;"></div>
+        <div class="bg-img" style="background-color: gray;"></div>
+        <div class="bg-img" style="background-color: green;"></div>
+        <div class="bg-container">
+            <div class="bg-control">1</div>
+            <div class="bg-control">2</div>
+            <div class="bg-control">3</div>
+            <div class="bg-control">4</div>
+            <div class="bg-control">5</div>
+        </div>
+    </div>
+    <script>
+        function handlerClick(location) {
+            for(var i=0; i< document.getElementsByClassName("bg-img").length; i++){
+                document.getElementsByClassName("bg-img")[i].classList.remove("opacity");
+            }
+            document.getElementsByClassName("bg-img")[location].classList.add("opacity");
+        }
+        for(var i= 0; i< document.getElementsByClassName("bg-control").length; i++){
+            document.getElementsByClassName("bg-control")[i].addEventListener("click", handlerClick.bind(event, i));
+        }
+    </script>
+</body>
+</html>
